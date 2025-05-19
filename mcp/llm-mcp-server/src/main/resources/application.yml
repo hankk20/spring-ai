@@ -1,0 +1,8 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: llm-mcp-server
+logging:
+  level:
+    org.springframework: debug

@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: llm-host
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        options:
+          model: "llama3.1"
+          temperature: 0.7
+          max-tokens: 8192
+      init:
+        pull-model-strategy: when_missing
+    mcp:
+      client:
+        stdio:
+          connections:
+            sequential-thinking:
+              command: npx.cmd
+              args:
+                - "-y"
+                - "@modelcontextprotocol/server-sequential-thinking"
+            filesystem:
+              command: npx.cmd
+              args:
+                - "-y"
+                - "@modelcontextprotocol/server-filesystem"
+                - "./"
+        toolcallback:
+          enabled: true
+        sse:
+          connections:
+            sales-server:
+              url: http://localhost:8081
+        request-timeout: 60s
+
+logging:
+  level:
+    org.springframework: DEBUG

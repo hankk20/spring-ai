@@ -1,0 +1,14 @@
+### GET request to example server
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+
+###
+
+### Send POST request with json body
+# @timeout 600
+POST http://localhost:8080/chat
+Content-Type: application/json
+
+{
+  "message": "매출 정보를 알려줘"
+}
