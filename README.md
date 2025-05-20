@@ -1,2 +1,2 @@
 # spring-ai study
-1. [MCP(Modle Context Protocol)](./mcp)
+1. [MCP(Model Context Protocol)](./mcp)
